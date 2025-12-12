@@ -1,0 +1,39 @@
+﻿@using CryptoPriceConverter.Models
+
+@model CryptoViewModel
+
+
+<h1>Cryptocurrency Converter</h1>
+
+<p>Check your favourite Cryptocurrency Price in several Currencies.</p>
+
+
+<form asp-controller="Crypto" asp-action="GetQuotes" method="post">
+    <label for="cryptoCode">Enter Cryptocurrency Code:</label>
+    <input type="text" id="cryptoCode" name="cryptoCode" placeholder="e.g. BTC" required />
+    <button type="submit">Submit</button>
+</form>
+
+
+@if (Model != null)
+{
+    <h2>Exchange Rates</h2>
+    <ul>
+        <li><strong>USD: </strong>@Model.ExchangeRates.USD</li>
+        <li><strong>EUR: </strong>@Model.ExchangeRates.EUR</li>
+        <li><strong>BRL: </strong>@Model.ExchangeRates.BRL</li>
+        <li><strong>GBP: </strong>@Model.ExchangeRates.GBP</li>
+        <li><strong>AUD: </strong>@Model.ExchangeRates.AUD</li>
+    </ul>
+
+    <h2>@Model.CryptoCode Prices</h2>
+    <ul>
+        <li><strong>USD: </strong>@Model.ConvertedPrices.CryptoPriceInUSD.ToString("F4")</li>
+        <li><strong>EUR: </strong>@Model.ConvertedPrices.CryptoPriceInEUR.ToString("F4")</li>
+        <li><strong>BRL: </strong>@Model.ConvertedPrices.CryptoPriceInBRL.ToString("F4")</li>
+        <li><strong>GBP: </strong>@Model.ConvertedPrices.CryptoPriceInGBP.ToString("F4")</li>
+        <li><strong>AUD: </strong>@Model.ConvertedPrices.CryptoPriceInAUD.ToString("F4")</li>
+    </ul>
+}
+
+<p>By: <em>Amir Moeini Rad</em></p>

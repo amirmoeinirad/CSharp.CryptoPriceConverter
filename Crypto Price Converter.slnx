@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="CryptoPriceConverter.Tests/CryptoPriceConverter.Tests.csproj" Id="f2102ca2-e535-46ae-a760-2c73161a213b" />
+  <Project Path="CryptoPriceConverter/CryptoPriceConverter.csproj" />
+</Solution>
